@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dark Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section>
+        <div class="toggle-btn">
+            <i class="fas fa-adjust"></i>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="content-img">
+                    <img src="img.jpg" alt="">
+                </div>
+                <div class="content-text">
+                    <h1 class="title">Novas Tendências</h1>
+                    <h2 class="subtitle">Dark-Theme ou Modo-Escuro</h2>
+                    <p class="paragraph">O esquema de cores claras sobre escuro , também chamado de modo preto , modo
+                        escuro , tema escuro ou modo noturno , é um esquema de cores que usa texto de cores claras,
+                        ícones e elementos gráficos da interface do usuário em um fundo escuro e é frequentemente
+                        discutido em termos de design de interface de usuário de computador e web design.</p>
+                    <p class="paragraph">Um artigo de 2018 da Popular Science sugere que "O modo escuro é mais fácil
+                        para os olhos e a bateria" e exibir branco com brilho total usa aproximadamente seis vezes
+                        mais energia que o preto puro em um Google Pixel , que possui um display OLED.</p>
+                    <a href="#" class="cta">Clique no ícone superior direito e veja</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let body = document.body;
+        let toggleBtn = document.querySelector('.toggle-btn');
+        let currentTheme = localStorage.getItem('currentTheme');
+
+        if (currentTheme) {
+            body.classList.add('dark-theme');
+        }
+        toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('dark-theme');
+
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('currentTheme', 'themeActive');
+            } else {
+                localStorage.setItem('currentTheme');
+            }
+        })
+    </script>
+</body>
+
+</html>
